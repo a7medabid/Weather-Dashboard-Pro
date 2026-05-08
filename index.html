@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard Pro - Mansoura</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+    <main class="dashboard">
+        <header class="top-bar">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search location...">
+            </div>
+            
+            <div class="user-info">
+                <h2 style="margin: 0 15px 0 0; font-weight: 400;">Mansoura</h2>
+                <i class="fas fa-user-circle avatar" style="font-size: 35px; color: var(--accent);"></i>
+            </div>
+        </header>
+
+            <div class="main-grid">
+                <div class="left-col">
+                    <section class="current-weather-card glass">
+                        <div class="location-label">Prediction Status</div>
+                        <div class="weather-info">
+                            <div class="text-data">
+                                <h1>Today</h1>
+                                <p id="result-conf">Real-time Data</p>
+                                <div class="temp" id="result-temp">--°C</div>
+                            </div>
+                            <div class="weather-icon">
+                                <i id="result-icon" class="fas fa-cloud-sun" style="font-size: 60px; color: var(--accent);"></i>
+                                <p id="result-text" style="margin-top:15px; font-weight: bold; font-size: 20px;">Waiting...</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="ai-input-section glass" style="margin-top: 25px;">
+                        <h3 style="margin-bottom: 15px;"><i class="fas fa-robot"></i> AI Prediction Input</h3>
+                        <div class="input-grid">
+                            <input type="number" id="temp_input" placeholder="Temp (°C)">
+                            <input type="number" id="hum_input" placeholder="Humidity (%)">
+                            <input type="number" id="wind_input" placeholder="Wind (km/h)">
+                            <input type="number" id="precip_input" placeholder="Precip (%)">
+                            <input type="number" id="cloud_input" placeholder="Cloud (%)">
+                            <input type="number" id="press_input" placeholder="Press (hPa)">
+                        </div>
+                        <button class="predict-btn" onclick="getPrediction()">Run AI Forecast</button>
+                    </section>
+                </div>
+
+                <div class="right-col">
+                    <section class="highlights-section">
+                        <h3>Today's Highlights</h3>
+                        <div class="highlights-grid">
+                            <div class="h-card glass">
+                                <p>Wind Status</p>
+                                <h4 id="stat-wind">-- <span>km/h</span></h4>
+                            </div>
+                            <div class="h-card glass">
+                                <p>Humidity</p>
+                                <h4 id="stat-hum">--<span>%</span></h4>
+                            </div>
+                            <div class="h-card glass">
+                                <p>Precipitation</p>
+                                <h4 id="stat-precip">0 <span>%</span></h4>
+                            </div>
+                            <div class="h-card glass">
+                                <p>Pressure</p>
+                                <h4 id="stat-press">-- <span>hPa</span></h4>
+                            </div>
+                            <div class="h-card glass sunrise-card">
+                                <p>Sunrise & Sunset</p>
+                                <div class="sun-times">
+                                    <span>☀️ 5:18 AM</span>
+                                    <span>🌙 6:27 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="forecast-section glass" style="margin-top: 25px;">
+                        <h3>Upcoming Forecast</h3>
+                        <div class="forecast-row">
+                            <div class="f-day"><span>Today</span><i class="fas fa-sun"></i> 27°</div>
+                            <div class="f-day"><span>Thu</span><i class="fas fa-sun"></i> 29°</div>
+                            <div class="f-day"><span>Fri</span><i class="fas fa-cloud"></i> 29°</div>
+                            <div class="f-day"><span>Sat</span><i class="fas fa-sun"></i> 32°</div>
+                            <div class="f-day"><span>Sun</span><i class="fas fa-sun"></i> 27°</div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
